@@ -67,9 +67,11 @@
             // 
             textBox1.Location = new Point(179, 319);
             textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.MaxLength = 36000;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(222, 27);
             textBox1.TabIndex = 0;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // textBox
             // 
@@ -119,11 +121,13 @@
             // 
             formulatextBox.BackColor = SystemColors.Window;
             formulatextBox.Cursor = Cursors.IBeam;
+            formulatextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             formulatextBox.Location = new Point(320, 427);
             formulatextBox.Margin = new Padding(3, 4, 3, 4);
             formulatextBox.Multiline = true;
             formulatextBox.Name = "formulatextBox";
             formulatextBox.ReadOnly = true;
+            formulatextBox.RightToLeft = RightToLeft.Yes;
             formulatextBox.Size = new Size(339, 85);
             formulatextBox.TabIndex = 5;
             // 
