@@ -6,6 +6,7 @@
         {
             InitializeComponent();
         }
+        decimal result;
         decimal convertNum;
         public double value = 0;
         public static class units
@@ -273,12 +274,16 @@
             {
                 try
                 {
-                      convertNum = decimal.Parse(textBox1.Text);
+                     convertNum = decimal.Parse(textBox1.Text);
                 }
                 catch
                 {
-                    MessageBox.Show("عدد قابل تبدیل نیست", "خطا");
+                    MessageBox.Show("فرمت عدد نامعتبر است", "خطا");
                 }
+               
+              
+                    
+                
                 if (inputlistbox.SelectedIndex != -1 && putputlistbox.SelectedIndex != -1)
                 {
                     string fromUnit = inputlistbox.SelectedItem.ToString();
@@ -305,155 +310,256 @@
         {
             decimal baseUnit = value;
             formula = "";
-
-            switch (fromUnit.Trim())
+            try
             {
-                case "Nanometer (nm)":
-                    baseUnit = value * 1e-9m;
-                    formula += $"{value} نانومتر معادل {baseUnit} متر است.\n";
-                    break;
-                case "Micrometer (µm)":
-                    baseUnit = value * 1e-6m; 
-                    formula += $"{value} میکرومتر معادل {baseUnit} متر است.\n";
-                    break;
-                case "Millimeter (mm)":
-                    baseUnit = value * 1e-3m;
-                    formula += $"{value} میلی‌متر معادل {baseUnit} متر است.\n";
-                    break;
-                case "Centimeter (cm)":
-                    baseUnit = value * 1e-2m;
-                    formula += $"{value} سانتی‌متر معادل {baseUnit} متر است.\n";
-                    break;
-                case "Meter (m)":
-                    baseUnit = value;
-                    formula += $"{value} متر همان {baseUnit} متر است.\n";
-                    break;
-                case "Kilometer (km)":
-                    baseUnit = value * 1e3m;
-                    formula += $"{value} کیلومتر معادل {baseUnit} متر است.\n";
-                    break;
-                case "Inch (in)":
-                    baseUnit = value * 0.0254m; 
-                    formula += $"{value} اینچ معادل {baseUnit} متر است.\n";
-                    break;
-                case "Foot (ft)":
-                    baseUnit = value * 0.3048m; 
-                    formula += $"{value} فوت معادل {baseUnit} متر است.\n";
-                    break;
-                case "Yard (yd)":
-                    baseUnit = value * 0.9144m; 
-                    formula += $"{value} یارد معادل {baseUnit} متر است.\n";
-                    break;
-                case "Mile (mi)":
-                    baseUnit = value * 1609.34m; 
-                    formula += $"{value} مایل معادل {baseUnit} متر است.\n";
-                    break;
+                switch (fromUnit.Trim())
+                {
+                    case "Nanometer (nm)":
+                        baseUnit = value * 1e-9m;
+                        formula += $"{value} نانومتر معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Micrometer (µm)":
+                        baseUnit = value * 1e-6m;
+                        formula += $"{value} میکرومتر معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Millimeter (mm)":
+                        baseUnit = value * 1e-3m;
+                        formula += $"{value} میلی‌متر معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Centimeter (cm)":
+                        baseUnit = value * 1e-2m;
+                        formula += $"{value} سانتی‌متر معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Meter (m)":
+                        baseUnit = value;
+                        formula += $"{value} متر همان {baseUnit} متر است.\n";
+                        break;
+                    case "Kilometer (km)":
+                        baseUnit = value * 1e3m;
+                        formula += $"{value} کیلومتر معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Inch (in)":
+                        baseUnit = value * 0.0254m;
+                        formula += $"{value} اینچ معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Foot (ft)":
+                        baseUnit = value * 0.3048m;
+                        formula += $"{value} فوت معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Yard (yd)":
+                        baseUnit = value * 0.9144m;
+                        formula += $"{value} یارد معادل {baseUnit} متر است.\n";
+                        break;
+                    case "Mile (mi)":
+                        baseUnit = value * 1609.34m;
+                        formula += $"{value} مایل معادل {baseUnit} متر است.\n";
+                        break;
 
-                // زمان
-                case "second(s)":
-                    baseUnit = value;
-                    formula += $"{value} ثانیه همان {baseUnit} ثانیه است.\n";
-                    break;
-                case "minutes (.min)":
-                    baseUnit = value * 60m;
-                    formula += $"{value} دقیقه معادل {baseUnit} ثانیه است.\n";
-                    break;
-                case "hour (h)":
-                    baseUnit = value * 3600m;
-                    formula += $"{value} ساعت معادل {baseUnit} ثانیه است.\n";
-                    break;
-                case "day":
-                    baseUnit = value * 86400m;
-                    formula += $"{value} روز معادل {baseUnit} ثانیه است.\n";
-                    break;
-                case "week":
-                    baseUnit = value * 604800m;
-                    formula += $"{value} هفته معادل {baseUnit} ثانیه است.\n";
-                    break;
-                case "months":
-                    baseUnit = value * 2629800m;
-                    formula += $"{value} ماه معادل {baseUnit} ثانیه است.\n";
-                    break;
-                case "year":
-                    baseUnit = value * 31557600m; 
-                    formula += $"{value} سال معادل {baseUnit} ثانیه است.\n";
-                    break;
+                    // زمان
+                    case "second(s)":
+                        baseUnit = value;
+                        formula += $"{value} ثانیه همان {baseUnit} ثانیه است.\n";
+                        break;
+                    case "minutes (.min)":
+                        baseUnit = value * 60m;
+                        formula += $"{value} دقیقه معادل {baseUnit} ثانیه است.\n";
+                        break;
+                    case "hour (h)":
+                        baseUnit = value * 3600m;
+                        formula += $"{value} ساعت معادل {baseUnit} ثانیه است.\n";
+                        break;
+                    case "day":
+                        baseUnit = value * 86400m;
+                        formula += $"{value} روز معادل {baseUnit} ثانیه است.\n";
+                        break;
+                    case "week":
+                        baseUnit = value * 604800m;
+                        formula += $"{value} هفته معادل {baseUnit} ثانیه است.\n";
+                        break;
+                    case "months":
+                        baseUnit = value * 2629800m;
+                        formula += $"{value} ماه معادل {baseUnit} ثانیه است.\n";
+                        break;
+                    case "year":
+                        baseUnit = value * 31557600m;
+                        formula += $"{value} سال معادل {baseUnit} ثانیه است.\n";
+                        break;
+                    //حافظه
+
+
+
+                    case " byte (b)":
+                        baseUnit = value;
+                        formula += $"{value} بیت همان {baseUnit} بیت است.\n";
+                        break;
+                    case "Byte (B)":
+                        baseUnit = value * 8m;
+                        formula += $"{value} بایت معادل {baseUnit} بیت است.\n";
+                        break;
+                    case "Kilobyte (KB)":
+                        baseUnit = value * 8e3m;
+                        formula += $"{value} کیلوبایت معادل {baseUnit} بیت است.\n";
+                        break;
+                    case "Megabyte (MB)":
+                        baseUnit = value * 8e6m;
+                        formula += $"{value} مگابایت معادل {baseUnit} بیت است.\n";
+                        break;
+                    case "Gigabyte (GB)":
+                        baseUnit = value * 8e9m;
+                        formula += $"{value} گیگابایت معادل {baseUnit} بیت است.\n";
+                        break;
+                    case "Terabyte (TB)":
+                        baseUnit = value * 8e12m;
+                        formula += $"{value} ترابایت معادل {baseUnit} بیت است.\n";
+                        break;
+                    case "Petabyte PB":
+                        baseUnit = value * 8e15m;
+                        formula += $"{value} پتابایت معادل {baseUnit} بیت است.\n";
+                        break;
+                   
+                    // تبدیل واحدهای سرعت به متر بر ثانیه
+                    case "meters per second (m/s)":
+                        baseUnit = value;
+                        formula += $"{value} متر بر ثانیه همان {baseUnit} متر بر ثانیه است.\n";
+                        break;
+                    case "kilometers per hour (km/h)":
+                        baseUnit = value * (1000m / 3600m); // تبدیل به متر بر ثانیه
+                        formula += $"{value} کیلومتر بر ساعت معادل {baseUnit} متر بر ثانیه است.\n";
+                        break;
+                    case "miles per hour (mph)":
+                        baseUnit = value * (1609.34m / 3600m); // تبدیل به متر بر ثانیه
+                        formula += $"{value} مایل بر ساعت معادل {baseUnit} متر بر ثانیه است.\n";
+                        break;
+                    
+                }
+
+                 result = baseUnit;
+                switch (toUnit.Trim())
+                {
+                    // طول
+                    case "Nanometer (nm)":
+                        result = baseUnit / 1e-9m;
+                        formula += $"برای تبدیل به نانومتر، {baseUnit} متر را بر 1e-9 تقسیم می‌کنیم: نتیجه = {result} نانومتر.";
+                        break;
+                    case "Micrometer (µm)":
+                        result = baseUnit / 1e-6m;
+                        formula += $"برای تبدیل به میکرومتر، {baseUnit} متر را بر 1e-6 تقسیم می‌کنیم: نتیجه = {result} میکرومتر.";
+                        break;
+                    case "Millimeter (mm)":
+                        result = baseUnit / 1e-3m;
+                        formula += $"برای تبدیل به میلی‌متر، {baseUnit} متر را بر 1e-3 تقسیم می‌کنیم: نتیجه = {result} میلی‌متر.";
+                        break;
+                    case "Centimeter (cm)":
+                        result = baseUnit / 1e-2m;
+                        formula += $"برای تبدیل به سانتی‌متر، {baseUnit} متر را بر 1e-2 تقسیم می‌کنیم: نتیجه = {result} سانتی‌متر.";
+                        break;
+                    case "Meter (m)":
+                        result = baseUnit;
+                        formula += $"نتیجه نهایی همان {result} متر است.";
+                        break;
+                    case "Kilometer (km)":
+                        result = baseUnit / 1e3m;
+                        formula += $"برای تبدیل به کیلومتر، {baseUnit} متر را بر 1e3 تقسیم می‌کنیم: نتیجه = {result} کیلومتر.";
+                        break;
+                    case "Inch (in)":
+                        result = baseUnit / 0.0254m;
+                        formula += $"برای تبدیل به اینچ، {baseUnit} متر را بر 0.0254 تقسیم می‌کنیم: نتیجه = {result} اینچ.";
+                        break;
+                    case "Foot (ft)":
+                        result = baseUnit / 0.3048m;
+                        formula += $"برای تبدیل به فوت، {baseUnit} متر را بر 0.3048 تقسیم می‌کنیم: نتیجه = {result} فوت.";
+                        break;
+                    case "Yard (yd)":
+                        result = baseUnit / 0.9144m;
+                        formula += $"برای تبدیل به یارد، {baseUnit} متر را بر 0.9144 تقسیم می‌کنیم: نتیجه = {result} یارد.";
+                        break;
+                    case "Mile (mi)":
+                        result = baseUnit / 1609.34m;
+                        formula += $"برای تبدیل به مایل، {baseUnit} متر را بر 1609.34 تقسیم می‌کنیم: نتیجه = {result} مایل.";
+                        break;
+
+                    case "second(s)":
+                        result = baseUnit;
+                        formula += $"نتیجه نهایی همان {result} ثانیه است.";
+                        break;
+                    case "minutes (.min)":
+                        result = baseUnit / 60m;
+                        formula += $"برای تبدیل به دقیقه، {baseUnit} ثانیه را بر 60 تقسیم می‌کنیم: نتیجه = {result} دقیقه.";
+                        break;
+                    case "hour (h)":
+                        result = baseUnit / 3600m;
+                        formula += $"برای تبدیل به ساعت، {baseUnit} ثانیه را بر 3600 تقسیم می‌کنیم: نتیجه = {result} ساعت.";
+                        break;
+                    case "day":
+                        result = baseUnit / 86400m;
+                        formula += $"برای تبدیل به روز، {baseUnit} ثانیه را بر 86400 تقسیم می‌کنیم: نتیجه = {result} روز.";
+                        break;
+                    case "week":
+                        result = baseUnit / 604800m;
+                        formula += $"برای تبدیل به هفته، {baseUnit} ثانیه را بر 604800 تقسیم می‌کنیم: نتیجه = {result} هفته.";
+                        break;
+                    case "months":
+                        result = baseUnit / 2629800m;
+                        formula += $"برای تبدیل به ماه، {baseUnit} ثانیه را بر 2629800 تقسیم می‌کنیم: نتیجه = {result} ماه.";
+                        break;
+                    case "year":
+                        result = baseUnit / 31557600m;
+                        formula += $"برای تبدیل به سال، {baseUnit} ثانیه را بر 31557600 تقسیم می‌کنیم: نتیجه = {result} سال.";
+                        break;
+                    //حافظه
+
+                    case " byte (b)":
+                        result = baseUnit;
+                        formula += $"نتیجه نهایی همان {result} بیت است.";
+                        break;
+                    case "Byte (B)":
+                        result = baseUnit / 8m;
+                        formula += $"برای تبدیل به بایت، {baseUnit} بیت را بر 8 تقسیم می‌کنیم: نتیجه = {result} بایت.";
+                        break;
+                    case "Kilobyte (KB)":
+                        result = baseUnit / 8e3m;
+                        formula += $"برای تبدیل به کیلوبایت، {baseUnit} بیت را بر 8000 تقسیم می‌کنیم: نتیجه = {result} کیلوبایت.";
+                        break;
+                    case "Megabyte (MB)":
+                        result = baseUnit / 8e6m;
+                        formula += $"برای تبدیل به مگابایت، {baseUnit} بیت را بر 8000000 تقسیم می‌کنیم: نتیجه = {result} مگابایت.";
+                        break;
+                    case "Gigabyte (GB)":
+                        result = baseUnit / 8e9m;
+                        formula += $"برای تبدیل به گیگابایت، {baseUnit} بیت را بر 8000000000 تقسیم می‌کنیم: نتیجه = {result} گیگابایت.";
+                        break;
+                    case "Terabyte (TB)":
+                        result = baseUnit / 8e12m;
+                        formula += $"برای تبدیل به ترابایت، {baseUnit} بیت را بر 8000000000000 تقسیم می‌کنیم: نتیجه = {result} ترابایت.";
+                        break;
+                    case "Petabyte PB":
+                        result = baseUnit / 8e15m;
+                        formula += $"برای تبدیل به پتابایت، {baseUnit} بیت را بر 8000000000000000 تقسیم می‌کنیم: نتیجه = {result} پتابایت.";
+                        break;
+
+                    // واحدهای سرعت
+
+                    case "meters per second (m/s)":
+                        result = baseUnit;
+                        formula += $"نتیجه نهایی همان {result} متر بر ثانیه است.";
+                        break;
+                    case "kilometers per hour (km/h)":
+                        result = baseUnit * (3600m / 1000m); // تبدیل از متر بر ثانیه به کیلومتر بر ساعت
+                        formula += $"برای تبدیل به کیلومتر بر ساعت، {baseUnit} متر بر ثانیه را در (3600/1000) ضرب می‌کنیم: نتیجه = {result} کیلومتر بر ساعت.";
+                        break;
+                    case "miles per hour (mph)":
+                        result = baseUnit * (3600m / 1609.34m); // تبدیل از متر بر ثانیه به مایل بر ساعت
+                        formula += $"برای تبدیل به مایل بر ساعت، {baseUnit} متر بر ثانیه را در (3600/1609.34) ضرب می‌کنیم: نتیجه = {result} مایل بر ساعت.";
+                        break;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("عدد قابل تبدیل نیست", "خطا");
+                formulatextBox.Text = " ";
+                textBox.Text = " ";
             }
 
-            decimal result = baseUnit;
-            switch (toUnit.Trim())
-            {
-                // طول
-                case "Nanometer (nm)":
-                    result = baseUnit / 1e-9m; 
-                    formula += $"برای تبدیل به نانومتر، {baseUnit} متر را بر 1e-9 تقسیم می‌کنیم: نتیجه = {result} نانومتر.";
-                    break;
-                case "Micrometer (µm)":
-                    result = baseUnit / 1e-6m; 
-                    formula += $"برای تبدیل به میکرومتر، {baseUnit} متر را بر 1e-6 تقسیم می‌کنیم: نتیجه = {result} میکرومتر.";
-                    break;
-                case "Millimeter (mm)":
-                    result = baseUnit / 1e-3m;
-                    formula += $"برای تبدیل به میلی‌متر، {baseUnit} متر را بر 1e-3 تقسیم می‌کنیم: نتیجه = {result} میلی‌متر.";
-                    break;
-                case "Centimeter (cm)":
-                    result = baseUnit / 1e-2m; 
-                    formula += $"برای تبدیل به سانتی‌متر، {baseUnit} متر را بر 1e-2 تقسیم می‌کنیم: نتیجه = {result} سانتی‌متر.";
-                    break;
-                case "Meter (m)":
-                    result = baseUnit; 
-                    formula += $"نتیجه نهایی همان {result} متر است.";
-                    break;
-                case "Kilometer (km)":
-                    result = baseUnit / 1e3m;
-                    formula += $"برای تبدیل به کیلومتر، {baseUnit} متر را بر 1e3 تقسیم می‌کنیم: نتیجه = {result} کیلومتر.";
-                    break;
-                case "Inch (in)":
-                    result = baseUnit / 0.0254m; 
-                    formula += $"برای تبدیل به اینچ، {baseUnit} متر را بر 0.0254 تقسیم می‌کنیم: نتیجه = {result} اینچ.";
-                    break;
-                case "Foot (ft)":
-                    result = baseUnit / 0.3048m; 
-                    formula += $"برای تبدیل به فوت، {baseUnit} متر را بر 0.3048 تقسیم می‌کنیم: نتیجه = {result} فوت.";
-                    break;
-                case "Yard (yd)":
-                    result = baseUnit / 0.9144m; 
-                    formula += $"برای تبدیل به یارد، {baseUnit} متر را بر 0.9144 تقسیم می‌کنیم: نتیجه = {result} یارد.";
-                    break;
-                case "Mile (mi)":
-                    result = baseUnit / 1609.34m; 
-                    formula += $"برای تبدیل به مایل، {baseUnit} متر را بر 1609.34 تقسیم می‌کنیم: نتیجه = {result} مایل.";
-                    break;
-
-                case "second(s)":
-                    result = baseUnit;
-                    formula += $"نتیجه نهایی همان {result} ثانیه است.";
-                    break;
-                case "minutes (.min)":
-                    result = baseUnit / 60m;
-                    formula += $"برای تبدیل به دقیقه، {baseUnit} ثانیه را بر 60 تقسیم می‌کنیم: نتیجه = {result} دقیقه.";
-                    break;
-                case "hour (h)":
-                    result = baseUnit / 3600m;
-                    formula += $"برای تبدیل به ساعت، {baseUnit} ثانیه را بر 3600 تقسیم می‌کنیم: نتیجه = {result} ساعت.";
-                    break;
-                case "day":
-                    result = baseUnit / 86400m;
-                    formula += $"برای تبدیل به روز، {baseUnit} ثانیه را بر 86400 تقسیم می‌کنیم: نتیجه = {result} روز.";
-                    break;
-                case "week":
-                    result = baseUnit / 604800m;
-                    formula += $"برای تبدیل به هفته، {baseUnit} ثانیه را بر 604800 تقسیم می‌کنیم: نتیجه = {result} هفته.";
-                    break;
-                case "months":
-                    result = baseUnit / 2629800m;
-                    formula += $"برای تبدیل به ماه، {baseUnit} ثانیه را بر 2629800 تقسیم می‌کنیم: نتیجه = {result} ماه.";
-                    break;
-                case "year":
-                    result = baseUnit / 31557600m; 
-                    formula += $"برای تبدیل به سال، {baseUnit} ثانیه را بر 31557600 تقسیم می‌کنیم: نتیجه = {result} سال.";
-                    break;
-            }
 
             return result;
         }

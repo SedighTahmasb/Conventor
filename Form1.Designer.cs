@@ -67,7 +67,7 @@
             // 
             textBox1.Location = new Point(179, 319);
             textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.MaxLength = 36000;
+            textBox1.MaxLength = 28;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(222, 27);
             textBox1.TabIndex = 0;
@@ -128,6 +128,7 @@
             formulatextBox.Name = "formulatextBox";
             formulatextBox.ReadOnly = true;
             formulatextBox.RightToLeft = RightToLeft.Yes;
+            formulatextBox.ScrollBars = ScrollBars.Vertical;
             formulatextBox.Size = new Size(339, 85);
             formulatextBox.TabIndex = 5;
             // 
