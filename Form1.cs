@@ -7,6 +7,8 @@
             InitializeComponent();
         }
         decimal result;
+        bool errorCheck;
+
         decimal convertNum;
         public double value = 0;
         public static class units
@@ -430,9 +432,88 @@
                         baseUnit = value * (1609.34m / 3600m); // تبدیل به متر بر ثانیه
                         formula += $"{value} مایل بر ساعت معادل {baseUnit} متر بر ثانیه است.\n";
                         break;
-                    
-                }
 
+                    // تبدیل دما
+                    case "Celsius (°C)":
+                        baseUnit = value; // سلیوس به عنوان پایه
+                        formula += $"{value} درجه سلسیوس همان {baseUnit} درجه سلسیوس است.\n";
+                        break;
+                    case "Fahrenheit (°F)":
+                        baseUnit = (value - 32) * 5 / 9; // تبدیل فارنهایت به سلیوس
+                        formula += $"{value} درجه فارنهایت معادل {baseUnit} درجه سلسیوس است.\n";
+                        break;
+                    case "Kelvin (K)":
+                        baseUnit = value - 273.15m; // تبدیل کلوین به سلیوس
+                        formula += $"{value} کلوین معادل {baseUnit} درجه سلسیوس است.\n";
+                        break;
+
+                    // تبدیل وزن و جرم
+                    case "kilograms (kg)":
+                        baseUnit = value;
+                        formula += $"{value} کیلوگرم همان {baseUnit} کیلوگرم است.\n";
+                        break;
+                    case "grams (g)":
+                        baseUnit = value / 1000m;
+                        formula += $"{value} گرم معادل {baseUnit} کیلوگرم است.\n";
+                        break;
+                    case "milligrams (mg)":
+                        baseUnit = value / 1e6m;
+                        formula += $"{value} میلی‌گرم معادل {baseUnit} کیلوگرم است.\n";
+                        break;
+                    case "tons (ton)":
+                        baseUnit = value * 1000m;
+                        formula += $"{value} تن معادل {baseUnit} کیلوگرم است.\n";
+                        break;
+                    case "pounds (lb)":
+                        baseUnit = value * 0.453592m;
+                        formula += $"{value} پوند معادل {baseUnit} کیلوگرم است.\n";
+                        break;
+                    case "ounces (oz)":
+                        baseUnit = value * 0.0283495m;
+                        formula += $"{value} اونس معادل {baseUnit} کیلوگرم است.\n";
+                        break;
+                    // تبدیل واحدهای انرژی
+                    case "Joule (J)":
+                        baseUnit = value; // ژول به عنوان واحد پایه
+                        formula += $"{value} ژول همان {baseUnit} ژول است.\n";
+                        break;
+                    case "calories (cal)":
+                        baseUnit = value * 4.184m; // 1 کالری = 4.184 ژول
+                        formula += $"{value} کالری معادل {baseUnit} ژول است.\n";
+                        break;
+                    case "Kilowatt hours (kWh)":
+                        baseUnit = value * 3.6e6m; // 1 کیلووات ساعت = 3.6 میلیون ژول
+                        formula += $"{value} کیلووات ساعت معادل {baseUnit} ژول است.\n";
+                        break;
+                    case "BTU":
+                        baseUnit = value * 1055.06m; // 1 BTU = 1055.06 ژول
+                        formula += $"{value} BTU معادل {baseUnit} ژول است.\n";
+                        break;
+                    case "foot pound":
+                        baseUnit = value * 1.35582m; // 1 فوت پوند = 1.35582 ژول
+                        formula += $"{value} فوت پوند معادل {baseUnit} ژول است.\n";
+                        break;
+                    // تبدیل واحدهای عددی
+                    case "Binary (BIN)":
+                        baseUnit = Convert.ToDecimal(Convert.ToInt32(value.ToString(), 2));
+                        formula += $"{value} باینری معادل {baseUnit} دسیمال است.\n";
+                        break;
+                    case "Octal (OCT)":
+                        baseUnit = Convert.ToDecimal(Convert.ToInt32(value.ToString(), 8));
+                        formula += $"{value} اکتال معادل {baseUnit} دسیمال است.\n";
+                        break;
+                    case "Decimal (DEC)":
+                        baseUnit = value; // دسیمال به عنوان واحد پایه
+                        formula += $"{value} دسیمال همان {baseUnit} دسیمال است.\n";
+                        break;
+                    case "Hexadecimal (HEX)":
+                        baseUnit = Convert.ToDecimal(Convert.ToInt32(value.ToString(), 16));
+                        formula += $"{value} هگزادسیمال معادل {baseUnit} دسیمال است.\n";
+                        break;
+
+                
+                }
+               
                  result = baseUnit;
                 switch (toUnit.Trim())
                 {
@@ -551,6 +632,86 @@
                         result = baseUnit * (3600m / 1609.34m); // تبدیل از متر بر ثانیه به مایل بر ساعت
                         formula += $"برای تبدیل به مایل بر ساعت، {baseUnit} متر بر ثانیه را در (3600/1609.34) ضرب می‌کنیم: نتیجه = {result} مایل بر ساعت.";
                         break;
+                   
+                    // تبدیل دما
+                    case "Celsius (°C)":
+                        result = baseUnit; // سلیوس به عنوان پایه
+                        formula += $"نتیجه نهایی همان {result} درجه سلسیوس است.";
+                        break;
+                    case "Fahrenheit (°F)":
+                        result = (baseUnit * 9 / 5) + 32; // تبدیل سلیوس به فارنهایت
+                        formula += $"برای تبدیل به فارنهایت، {baseUnit} درجه سلسیوس را در 9/5 ضرب کرده و 32 اضافه می‌کنیم: نتیجه = {result} درجه فارنهایت.";
+                        break;
+                    case "Kelvin (K)":
+                        result = baseUnit + 273.15m; // تبدیل سلیوس به کلوین
+                        formula += $"برای تبدیل به کلوین، {baseUnit} درجه سلسیوس را با 273.15 جمع می‌کنیم: نتیجه = {result} کلوین.";
+                        break;
+
+                    // وزن و جرم
+                    case "kilograms (kg)":
+                        result = baseUnit;
+                        formula += $"نتیجه نهایی همان {result} کیلوگرم است.";
+                        break;
+                    case "grams (g)":
+                        result = baseUnit * 1000m;
+                        formula += $"برای تبدیل به گرم، {baseUnit} کیلوگرم را در 1000 ضرب می‌کنیم: نتیجه = {result} گرم.";
+                        break;
+                    case "milligrams (mg)":
+                        result = baseUnit * 1e6m;
+                        formula += $"برای تبدیل به میلی‌گرم، {baseUnit} کیلوگرم را در 1e6 ضرب می‌کنیم: نتیجه = {result} میلی‌گرم.";
+                        break;
+                    case "tons (ton)":
+                        result = baseUnit / 1000m;
+                        formula += $"برای تبدیل به تن، {baseUnit} کیلوگرم را بر 1000 تقسیم می‌کنیم: نتیجه = {result} تن.";
+                        break;
+                    case "pounds (lb)":
+                        result = baseUnit / 0.453592m;
+                        formula += $"برای تبدیل به پوند، {baseUnit} کیلوگرم را بر 0.453592 تقسیم می‌کنیم: نتیجه = {result} پوند.";
+                        break;
+                    case "ounces (oz)":
+                        result = baseUnit / 0.0283495m;
+                        formula += $"برای تبدیل به اونس، {baseUnit} کیلوگرم را بر 0.0283495 تقسیم می‌کنیم: نتیجه = {result} اونس.";
+                        break;
+                    // انرژی
+                    case "Joule (J)":
+                        result = baseUnit; // ژول به عنوان واحد پایه
+                        formula += $"نتیجه نهایی همان {result} ژول است.";
+                        break;
+                    case "calories (cal)":
+                        result = baseUnit / 4.184m; // تبدیل به کالری
+                        formula += $"برای تبدیل به کالری، {baseUnit} ژول را بر 4.184 تقسیم می‌کنیم: نتیجه = {result} کالری.";
+                        break;
+                    case "Kilowatt hours (kWh)":
+                        result = baseUnit / 3.6e6m; // تبدیل به کیلووات ساعت
+                        formula += $"برای تبدیل به کیلووات ساعت، {baseUnit} ژول را بر 3.6 میلیون تقسیم می‌کنیم: نتیجه = {result} کیلووات ساعت.";
+                        break;
+                    case "BTU":
+                        result = baseUnit / 1055.06m; // تبدیل به BTU
+                        formula += $"برای تبدیل به BTU، {baseUnit} ژول را بر 1055.06 تقسیم می‌کنیم: نتیجه = {result} BTU.";
+                        break;
+                    case "foot pound":
+                        result = baseUnit / 1.35582m; // تبدیل به فوت پوند
+                        formula += $"برای تبدیل به فوت پوند، {baseUnit} ژول را بر 1.35582 تقسیم می‌کنیم: نتیجه = {result} فوت پوند.";
+                        break;
+
+                    // سیستم‌های عددی
+                    case "Binary (BIN)":
+                        result = Convert.ToDecimal(Convert.ToString((int)baseUnit, 2));
+                        formula += $"نتیجه نهایی در سیستم باینری: {result}.";
+                        break;
+                    case "Octal (OCT)":
+                        result = Convert.ToDecimal(Convert.ToString((int)baseUnit, 8));
+                        formula += $"نتیجه نهایی در سیستم اکتال: {result}.";
+                        break;
+                    case "Decimal (DEC)":
+                        result = baseUnit; // دسیمال به عنوان واحد پایه
+                        formula += $"نتیجه نهایی همان {result} دسیمال است.";
+                        break;
+                    case "Hexadecimal (HEX)":
+                        result = Convert.ToDecimal(Convert.ToString((int)baseUnit, 16));
+                        formula += $"نتیجه نهایی در سیستم هگزادسیمال: {result}.";
+                        break;
+                
                 }
             }
             catch
@@ -558,9 +719,10 @@
                 MessageBox.Show("عدد قابل تبدیل نیست", "خطا");
                 formulatextBox.Text = " ";
                 textBox.Text = " ";
+                errorCheck = true;
             }
 
-
+         
             return result;
         }
 
