@@ -83,7 +83,6 @@
             public static string[] pressureunits = {
                      "Pascal (Pa)"
                     ,"bar"
-                    ,"Centimeters of mercury (cmHg)"
                     ,"mercury meter (mHg)"
                     ,"atmosphere (atm)"
             };
@@ -511,8 +510,91 @@
                         formula += $"{value} هگزادسیمال معادل {baseUnit} دسیمال است.\n";
                         break;
 
-                
-                }
+                  
+                    // تبدیل واحدهای فشار
+                    case "Pascal (Pa)":
+                        baseUnit = value; // Pascal as the base unit
+                        formula += $"{value} پاسکال همان {baseUnit} پاسکال است.\n";
+                        break;
+                    case "bar":
+                        baseUnit = value * 1e5m; // 1 bar = 100,000 Pascal
+                        formula += $"{value} بار معادل {baseUnit} پاسکال است.\n";
+                        break;
+                    
+                    case "mercury meter (mHg)":
+                        baseUnit = value * 133322.387415m; // 1 mHg ≈ 133322.387415 Pascal
+                        formula += $"{value} متر جیوه معادل {baseUnit} پاسکال است.\n";
+                        break;
+                    case "atmosphere (atm)":
+                        baseUnit = value * 101325m; // 1 atm ≈ 101325 Pascal
+                        formula += $"{value} اتمسفر معادل {baseUnit} پاسکال است.\n";
+                        break;
+
+
+                     
+                            case "liter (L)":
+                                baseUnit = value * 0.001m; // 1 لیتر = 0.001 متر مکعب
+                                formula += $"{value} لیتر معادل {baseUnit} متر مکعب است.\n";
+                                break;
+                            case "milliliter (mL)":
+                                baseUnit = value * 1e-6m; // 1 میلی‌لیتر = 0.000001 متر مکعب
+                                formula += $"{value} میلی‌لیتر معادل {baseUnit} متر مکعب است.\n";
+                                break;
+                            case "cubic meter (m³)":
+                                baseUnit = value; // متر مکعب به عنوان واحد پایه
+                                formula += $"{value} متر مکعب همان {baseUnit} متر مکعب است.\n";
+                                break;
+                            case "cubic centimeter (cm³)":
+                                baseUnit = value * 1e-6m; // 1 سانتی‌متر مکعب = 0.000001 متر مکعب
+                                formula += $"{value} سانتی‌متر مکعب معادل {baseUnit} متر مکعب است.\n";
+                                break;
+                            case "gallon":
+                                baseUnit = value * 0.00378541m; // 1 گالن ≈ 3.78541 لیتر
+                                formula += $"{value} گالن معادل {baseUnit} متر مکعب است.\n";
+                                break;
+                           
+                            case "cubic feet (ft³)":
+                                baseUnit = value * 0.0283168m; // 1 فوت مکعب ≈ 0.0283168 متر مکعب
+                                formula += $"{value} فوت مکعب معادل {baseUnit} متر مکعب است.\n";
+                                break;
+                            case "cubic inch (in³)":
+                                baseUnit = value * 0.0000163871m; // 1 اینچ مکعب ≈ 0.0000163871 متر مکعب
+                                formula += $"{value} اینچ مکعب معادل {baseUnit} متر مکعب است.\n";
+                                break;
+
+                       
+                        // تبدیل به واحد پایه (متر مربع)
+
+                            case "square kilometer (km²)":
+                                baseUnit = value * 1_000_000m; // 1 کیلومتر مربع = 1,000,000 متر مربع
+                                formula += $"{value} کیلومتر مربع معادل {baseUnit} متر مربع است.\n";
+                                break;
+                            case "square hectometer (hm²)":
+                                baseUnit = value * 10_000m; // 1 هکتومتر مربع = 10,000 متر مربع
+                                formula += $"{value} هکتومتر مربع معادل {baseUnit} متر مربع است.\n";
+                                break;
+                            case "square decameter (dam²)":
+                                baseUnit = value * 100m; // 1 دکامتر مربع = 100 متر مربع
+                                formula += $"{value} دکامتر مربع معادل {baseUnit} متر مربع است.\n";
+                                break;
+                            case "square meter (m²)":
+                                baseUnit = value; // متر مربع به عنوان واحد پایه
+                                formula += $"{value} متر مربع همان {baseUnit} متر مربع است.\n";
+                                break;
+                            case "square decimeter (dm²)":
+                                baseUnit = value * 0.01m; // 1 دسی‌متر مربع = 0.01 متر مربع
+                                formula += $"{value} دسی‌متر مربع معادل {baseUnit} متر مربع است.\n";
+                                break;
+                            case "square centimeter (m²)":
+                                baseUnit = value * 0.0001m; // 1 سانتی‌متر مربع = 0.0001 متر مربع
+                                formula += $"{value} سانتی‌متر مربع معادل {baseUnit} متر مربع است.\n";
+                                break;
+                            case "square millimeter (mm²)":
+                                baseUnit = value * 0.000001m; // 1 میلی‌متر مربع = 0.000001 متر مربع
+                                formula += $"{value} میلی‌متر مربع معادل {baseUnit} متر مربع است.\n";
+                                break;
+
+                        }
                
                  result = baseUnit;
                 switch (toUnit.Trim())
@@ -711,7 +793,91 @@
                         result = Convert.ToDecimal(Convert.ToString((int)baseUnit, 16));
                         formula += $"نتیجه نهایی در سیستم هگزادسیمال: {result}.";
                         break;
+
+
                 
+                    // تبدیل واحدهای فشار
+                    case "Pascal (Pa)":
+                        result = baseUnit;
+                        formula += $"نتیجه نهایی همان {result} پاسکال است.";
+                        break;
+                    case "bar":
+                        result = baseUnit / 1e5m;
+                        formula += $"برای تبدیل به بار، {baseUnit} پاسکال را بر 100000 تقسیم می‌کنیم: نتیجه = {result} بار.";
+                        break;
+                   
+                    case "mercury meter (mHg)":
+                        result = baseUnit / 133322.387415m;
+                        formula += $"برای تبدیل به متر جیوه، {baseUnit} پاسکال را بر 133322.387415 تقسیم می‌کنیم: نتیجه = {result} متر جیوه.";
+                        break;
+                    case "atmosphere (atm)":
+                        result = baseUnit / 101325m;
+                        formula += $"برای تبدیل به اتمسفر، {baseUnit} پاسکال را بر 101325 تقسیم می‌کنیم: نتیجه = {result} اتمسفر.";
+                        break;
+
+
+                  
+                    // حجم
+                    case "liter (L)":
+                        result = baseUnit / 0.001m; // تبدیل به لیتر
+                        formula += $"برای تبدیل به لیتر، {baseUnit} متر مکعب را بر 0.001 تقسیم می‌کنیم: نتیجه = {result} لیتر.";
+                        break;
+                    case "milliliter (mL)":
+                        result = baseUnit / 1e-6m; // تبدیل به میلی‌لیتر
+                        formula += $"برای تبدیل به میلی‌لیتر، {baseUnit} متر مکعب را بر 1e-6 تقسیم می‌کنیم: نتیجه = {result} میلی‌لیتر.";
+                        break;
+                    case "cubic meter (m³)":
+                        result = baseUnit; // نتیجه همان متر مکعب است
+                        formula += $"نتیجه نهایی همان {result} متر مکعب است.";
+                        break;
+                    case "cubic centimeter (cm³)":
+                        result = baseUnit / 1e-6m; // تبدیل به سانتی‌متر مکعب
+                        formula += $"برای تبدیل به سانتی‌متر مکعب، {baseUnit} متر مکعب را بر 1e-6 تقسیم می‌کنیم: نتیجه = {result} سانتی‌متر مکعب.";
+                        break;
+                    case "gallon":
+                        result = baseUnit / 0.00378541m; // تبدیل به گالن
+                        formula += $"برای تبدیل به گالن، {baseUnit} متر مکعب را بر 0.00378541 تقسیم می‌کنیم: نتیجه = {result} گالن.";
+                        break;
+                    
+                    case "cubic feet (ft³)":
+                        result = baseUnit / 0.0283168m; // تبدیل به فوت مکعب
+                        formula += $"برای تبدیل به فوت مکعب، {baseUnit} متر مکعب را بر 0.0283168 تقسیم می‌کنیم: نتیجه = {result} فوت مکعب.";
+                        break;
+                    case "cubic inch (in³)":
+                        result = baseUnit / 0.0000163871m; // تبدیل به اینچ مکعب
+                        formula += $"برای تبدیل به اینچ مکعب، {baseUnit} متر مکعب را بر 0.0000163871 تقسیم می‌کنیم: نتیجه = {result} اینچ مکعب.";
+                        break;
+
+                 
+
+                    case "square kilometer (km²)":
+                        result = baseUnit / 1_000_000m; // تبدیل به کیلومتر مربع
+                        formula += $"برای تبدیل به کیلومتر مربع، {baseUnit} متر مربع را بر 1,000,000 تقسیم می‌کنیم: نتیجه = {result} کیلومتر مربع.";
+                        break;
+                    case "square hectometer (hm²)":
+                        result = baseUnit / 10_000m; // تبدیل به هکتومتر مربع
+                        formula += $"برای تبدیل به هکتومتر مربع، {baseUnit} متر مربع را بر 10,000 تقسیم می‌کنیم: نتیجه = {result} هکتومتر مربع.";
+                        break;
+                    case "square decameter (dam²)":
+                        result = baseUnit / 100m; // تبدیل به دکامتر مربع
+                        formula += $"برای تبدیل به دکامتر مربع، {baseUnit} متر مربع را بر 100 تقسیم می‌کنیم: نتیجه = {result} دکامتر مربع.";
+                        break;
+                    case "square meter (m²)":
+                        result = baseUnit; // نتیجه همان متر مربع است
+                        formula += $"نتیجه نهایی همان {result} متر مربع است.";
+                        break;
+                    case "square decimeter (dm²)":
+                        result = baseUnit / 0.01m; // تبدیل به دسی‌متر مربع
+                        formula += $"برای تبدیل به دسی‌متر مربع، {baseUnit} متر مربع را بر 0.01 تقسیم می‌کنیم: نتیجه = {result} دسی‌متر مربع.";
+                        break;
+                    case "square centimeter (m²)":
+                        result = baseUnit / 0.0001m; // تبدیل به سانتی‌متر مربع
+                        formula += $"برای تبدیل به سانتی‌متر مربع، {baseUnit} متر مربع را بر 0.0001 تقسیم می‌کنیم: نتیجه = {result} سانتی‌متر مربع.";
+                        break;
+                    case "square millimeter (mm²)":
+                        result = baseUnit / 0.000001m; // تبدیل به میلی‌متر مربع
+                        formula += $"برای تبدیل به میلی‌متر مربع، {baseUnit} متر مربع را بر 0.000001 تقسیم می‌کنیم: نتیجه = {result} میلی‌متر مربع.";
+                        break;
                 }
             }
             catch
