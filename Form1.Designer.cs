@@ -442,7 +442,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Convertor";
             Load += Form1_Load;
             menuStrip2.ResumeLayout(false);
             menuStrip2.PerformLayout();

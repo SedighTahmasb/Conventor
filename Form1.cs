@@ -219,7 +219,7 @@
         {
             try
             {
-                Clipboard.SetText(textBox1.Text);
+                Clipboard.SetText(textBox.Text);
             }
             catch (Exception)
             {
@@ -234,6 +234,7 @@
 
         private void x2btn_Click(object sender, EventArgs e)
         {
+            value = Convert.ToDouble(textBox1.Text);
 
             value = value * 2;
             textBox1.Text = value.ToString();
@@ -241,30 +242,40 @@
 
         private void x3btn_Click(object sender, EventArgs e)
         {
+            value = Convert.ToDouble(textBox1.Text);
+
             value = value * 3;
             textBox1.Text = value.ToString();
         }
 
         private void x10btn_Click(object sender, EventArgs e)
         {
+            value = Convert.ToDouble(textBox1.Text);
+
             value = value * 10;
             textBox1.Text = value.ToString();
         }
 
         private void x5btn_Click(object sender, EventArgs e)
         {
+            value = Convert.ToDouble(textBox1.Text);
+
             value = value * 5;
             textBox1.Text = value.ToString();
         }
 
         private void x100btn_Click(object sender, EventArgs e)
         {
+            value = Convert.ToDouble(textBox1.Text);
+
             value = value * 100;
             textBox1.Text = value.ToString();
         }
 
         private void x1000btn_Click(object sender, EventArgs e)
         {
+            value = Convert.ToDouble(textBox1.Text);
+
             value = value * 1000;
             textBox1.Text = value.ToString();
         }

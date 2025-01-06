@@ -84,6 +84,8 @@ namespace Conventor
                 }
                 else if (Devide == true)
                 {
+                    result2 = Convert.ToDouble(textBox1.Text);
+
                     if (result2 != 0)
                     {
                         result2 = Convert.ToDouble(textBox1.Text);
