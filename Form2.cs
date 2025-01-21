@@ -45,7 +45,7 @@ namespace Conventor
             {
                 textBox1.Text += ".";
             }
-           
+
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
@@ -233,10 +233,20 @@ namespace Conventor
         private void btnClose_Click(object sender, EventArgs e)
         {
             Form1 form = new Form1();
+            double value = Convert.ToDouble(textBox1.Text);
             form.textBox1.Text = textBox1.Text;
-            form.value += Convert.ToDouble(textBox1.Text);
+            form.value += value;
             form.Show();
             //this.Hide();
+
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+
             this.Close();
         }
     }

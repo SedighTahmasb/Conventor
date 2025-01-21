@@ -78,10 +78,12 @@
             textBox.BackColor = SystemColors.Window;
             textBox.Location = new Point(437, 319);
             textBox.Margin = new Padding(3, 4, 3, 4);
+            textBox.MaxLength = 32000;
             textBox.Name = "textBox";
             textBox.ReadOnly = true;
             textBox.Size = new Size(222, 27);
             textBox.TabIndex = 0;
+            textBox.TextChanged += textBox_TextChanged;
             // 
             // label1
             // 
@@ -373,12 +375,13 @@
             // 
             // convertbtn
             // 
+            convertbtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             convertbtn.Location = new Point(489, 363);
             convertbtn.Margin = new Padding(3, 4, 3, 4);
             convertbtn.Name = "convertbtn";
             convertbtn.Size = new Size(170, 56);
             convertbtn.TabIndex = 10;
-            convertbtn.TextAlign = ContentAlignment.MiddleLeft;
+            convertbtn.Text = "Convert";
             convertbtn.UseVisualStyleBackColor = true;
             convertbtn.Click += convertbtn_Click;
             // 

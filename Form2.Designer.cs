@@ -54,14 +54,16 @@
             btnPlus = new Button();
             textBox1 = new TextBox();
             btnClose = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnEqual
             // 
             btnEqual.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEqual.Location = new Point(160, 273);
+            btnEqual.Location = new Point(183, 364);
+            btnEqual.Margin = new Padding(3, 4, 3, 4);
             btnEqual.Name = "btnEqual";
-            btnEqual.Size = new Size(46, 126);
+            btnEqual.Size = new Size(53, 168);
             btnEqual.TabIndex = 26;
             btnEqual.Text = "=";
             btnEqual.UseVisualStyleBackColor = true;
@@ -70,9 +72,10 @@
             // button6
             // 
             button6.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(160, 141);
+            button6.Location = new Point(183, 188);
+            button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
-            button6.Size = new Size(46, 126);
+            button6.Size = new Size(53, 168);
             button6.TabIndex = 24;
             button6.Text = "CE";
             button6.UseVisualStyleBackColor = true;
@@ -81,9 +84,10 @@
             // button23
             // 
             button23.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button23.Location = new Point(111, 339);
+            button23.Location = new Point(127, 452);
+            button23.Margin = new Padding(3, 4, 3, 4);
             button23.Name = "button23";
-            button23.Size = new Size(46, 60);
+            button23.Size = new Size(53, 80);
             button23.TabIndex = 23;
             button23.Text = "DEL";
             button23.UseVisualStyleBackColor = true;
@@ -92,9 +96,10 @@
             // button17
             // 
             button17.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button17.Location = new Point(111, 273);
+            button17.Location = new Point(127, 364);
+            button17.Margin = new Padding(3, 4, 3, 4);
             button17.Name = "button17";
-            button17.Size = new Size(46, 60);
+            button17.Size = new Size(53, 80);
             button17.TabIndex = 22;
             button17.Text = "3";
             button17.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@
             // button11
             // 
             button11.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.Location = new Point(111, 207);
+            button11.Location = new Point(127, 276);
+            button11.Margin = new Padding(3, 4, 3, 4);
             button11.Name = "button11";
-            button11.Size = new Size(46, 60);
+            button11.Size = new Size(53, 80);
             button11.TabIndex = 21;
             button11.Text = "6";
             button11.UseVisualStyleBackColor = true;
@@ -114,9 +120,10 @@
             // button5
             // 
             button5.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(111, 141);
+            button5.Location = new Point(127, 188);
+            button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(46, 60);
+            button5.Size = new Size(53, 80);
             button5.TabIndex = 20;
             button5.Text = "9";
             button5.UseVisualStyleBackColor = true;
@@ -125,9 +132,10 @@
             // btntripleZero
             // 
             btntripleZero.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btntripleZero.Location = new Point(111, 405);
+            btntripleZero.Location = new Point(127, 540);
+            btntripleZero.Margin = new Padding(3, 4, 3, 4);
             btntripleZero.Name = "btntripleZero";
-            btntripleZero.Size = new Size(98, 38);
+            btntripleZero.Size = new Size(112, 51);
             btntripleZero.TabIndex = 19;
             btntripleZero.Text = "000";
             btntripleZero.UseVisualStyleBackColor = true;
@@ -136,9 +144,10 @@
             // btnDoubleZero
             // 
             btnDoubleZero.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDoubleZero.Location = new Point(7, 405);
+            btnDoubleZero.Location = new Point(8, 540);
+            btnDoubleZero.Margin = new Padding(3, 4, 3, 4);
             btnDoubleZero.Name = "btnDoubleZero";
-            btnDoubleZero.Size = new Size(98, 38);
+            btnDoubleZero.Size = new Size(112, 51);
             btnDoubleZero.TabIndex = 18;
             btnDoubleZero.Text = "00";
             btnDoubleZero.UseVisualStyleBackColor = true;
@@ -147,9 +156,10 @@
             // button22
             // 
             button22.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button22.Location = new Point(59, 339);
+            button22.Location = new Point(67, 452);
+            button22.Margin = new Padding(3, 4, 3, 4);
             button22.Name = "button22";
-            button22.Size = new Size(46, 60);
+            button22.Size = new Size(53, 80);
             button22.TabIndex = 17;
             button22.Text = "0";
             button22.UseVisualStyleBackColor = true;
@@ -158,9 +168,10 @@
             // button16
             // 
             button16.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button16.Location = new Point(59, 273);
+            button16.Location = new Point(67, 364);
+            button16.Margin = new Padding(3, 4, 3, 4);
             button16.Name = "button16";
-            button16.Size = new Size(46, 60);
+            button16.Size = new Size(53, 80);
             button16.TabIndex = 16;
             button16.Text = "2";
             button16.UseVisualStyleBackColor = true;
@@ -169,9 +180,10 @@
             // button10
             // 
             button10.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(59, 207);
+            button10.Location = new Point(67, 276);
+            button10.Margin = new Padding(3, 4, 3, 4);
             button10.Name = "button10";
-            button10.Size = new Size(46, 60);
+            button10.Size = new Size(53, 80);
             button10.TabIndex = 15;
             button10.Text = "5";
             button10.UseVisualStyleBackColor = true;
@@ -180,9 +192,10 @@
             // button4
             // 
             button4.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(59, 141);
+            button4.Location = new Point(67, 188);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(46, 60);
+            button4.Size = new Size(53, 80);
             button4.TabIndex = 25;
             button4.Text = "8";
             button4.UseVisualStyleBackColor = true;
@@ -191,9 +204,10 @@
             // btnPoint
             // 
             btnPoint.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPoint.Location = new Point(7, 339);
+            btnPoint.Location = new Point(8, 452);
+            btnPoint.Margin = new Padding(3, 4, 3, 4);
             btnPoint.Name = "btnPoint";
-            btnPoint.Size = new Size(46, 60);
+            btnPoint.Size = new Size(53, 80);
             btnPoint.TabIndex = 14;
             btnPoint.Text = ".";
             btnPoint.UseVisualStyleBackColor = true;
@@ -202,10 +216,11 @@
             // button15
             // 
             button15.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button15.Location = new Point(7, 273);
+            button15.Location = new Point(8, 364);
+            button15.Margin = new Padding(3, 4, 3, 4);
             button15.Name = "button15";
             button15.RightToLeft = RightToLeft.No;
-            button15.Size = new Size(46, 60);
+            button15.Size = new Size(53, 80);
             button15.TabIndex = 12;
             button15.Text = "1";
             button15.UseVisualStyleBackColor = true;
@@ -214,9 +229,10 @@
             // button9
             // 
             button9.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(7, 207);
+            button9.Location = new Point(8, 276);
+            button9.Margin = new Padding(3, 4, 3, 4);
             button9.Name = "button9";
-            button9.Size = new Size(46, 60);
+            button9.Size = new Size(53, 80);
             button9.TabIndex = 11;
             button9.Text = "4";
             button9.UseVisualStyleBackColor = true;
@@ -225,9 +241,10 @@
             // button3
             // 
             button3.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(7, 141);
+            button3.Location = new Point(8, 188);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(46, 60);
+            button3.Size = new Size(53, 80);
             button3.TabIndex = 10;
             button3.Text = "7";
             button3.UseVisualStyleBackColor = true;
@@ -236,9 +253,10 @@
             // btnRoot
             // 
             btnRoot.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRoot.Location = new Point(264, 339);
+            btnRoot.Location = new Point(302, 452);
+            btnRoot.Margin = new Padding(3, 4, 3, 4);
             btnRoot.Name = "btnRoot";
-            btnRoot.Size = new Size(46, 60);
+            btnRoot.Size = new Size(53, 80);
             btnRoot.TabIndex = 9;
             btnRoot.Text = "√";
             btnRoot.UseVisualStyleBackColor = true;
@@ -247,9 +265,10 @@
             // btnPower
             // 
             btnPower.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPower.Location = new Point(264, 273);
+            btnPower.Location = new Point(302, 364);
+            btnPower.Margin = new Padding(3, 4, 3, 4);
             btnPower.Name = "btnPower";
-            btnPower.Size = new Size(46, 60);
+            btnPower.Size = new Size(53, 80);
             btnPower.TabIndex = 8;
             btnPower.Text = "^";
             btnPower.UseVisualStyleBackColor = true;
@@ -258,9 +277,10 @@
             // button8
             // 
             button8.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.Location = new Point(264, 207);
+            button8.Location = new Point(302, 276);
+            button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
-            button8.Size = new Size(46, 60);
+            button8.Size = new Size(53, 80);
             button8.TabIndex = 7;
             button8.Text = "C";
             button8.UseVisualStyleBackColor = true;
@@ -269,9 +289,10 @@
             // btnDevide
             // 
             btnDevide.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDevide.Location = new Point(212, 339);
+            btnDevide.Location = new Point(242, 452);
+            btnDevide.Margin = new Padding(3, 4, 3, 4);
             btnDevide.Name = "btnDevide";
-            btnDevide.Size = new Size(46, 60);
+            btnDevide.Size = new Size(53, 80);
             btnDevide.TabIndex = 6;
             btnDevide.Text = "/";
             btnDevide.UseVisualStyleBackColor = true;
@@ -280,9 +301,10 @@
             // btnMultiple
             // 
             btnMultiple.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMultiple.Location = new Point(212, 273);
+            btnMultiple.Location = new Point(242, 364);
+            btnMultiple.Margin = new Padding(3, 4, 3, 4);
             btnMultiple.Name = "btnMultiple";
-            btnMultiple.Size = new Size(46, 60);
+            btnMultiple.Size = new Size(53, 80);
             btnMultiple.TabIndex = 5;
             btnMultiple.Text = "*";
             btnMultiple.UseVisualStyleBackColor = true;
@@ -291,9 +313,10 @@
             // btnPercent
             // 
             btnPercent.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPercent.Location = new Point(264, 141);
+            btnPercent.Location = new Point(302, 188);
+            btnPercent.Margin = new Padding(3, 4, 3, 4);
             btnPercent.Name = "btnPercent";
-            btnPercent.Size = new Size(46, 60);
+            btnPercent.Size = new Size(53, 80);
             btnPercent.TabIndex = 4;
             btnPercent.Text = "%";
             btnPercent.UseVisualStyleBackColor = true;
@@ -302,9 +325,10 @@
             // btnMinus
             // 
             btnMinus.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMinus.Location = new Point(212, 207);
+            btnMinus.Location = new Point(242, 276);
+            btnMinus.Margin = new Padding(3, 4, 3, 4);
             btnMinus.Name = "btnMinus";
-            btnMinus.Size = new Size(46, 60);
+            btnMinus.Size = new Size(53, 80);
             btnMinus.TabIndex = 3;
             btnMinus.Text = "-";
             btnMinus.UseVisualStyleBackColor = true;
@@ -313,9 +337,10 @@
             // btnPlus
             // 
             btnPlus.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPlus.Location = new Point(212, 141);
+            btnPlus.Location = new Point(242, 188);
+            btnPlus.Margin = new Padding(3, 4, 3, 4);
             btnPlus.Name = "btnPlus";
-            btnPlus.Size = new Size(46, 60);
+            btnPlus.Size = new Size(53, 80);
             btnPlus.TabIndex = 13;
             btnPlus.Text = "+";
             btnPlus.UseVisualStyleBackColor = true;
@@ -324,10 +349,11 @@
             // textBox1
             // 
             textBox1.Font = new Font("Consolas", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(7, 2);
+            textBox1.Location = new Point(9, 5);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(303, 133);
+            textBox1.Size = new Size(346, 176);
             textBox1.TabIndex = 2;
             textBox1.Text = "0";
             textBox1.KeyPress += textBox1_KeyPress;
@@ -336,19 +362,32 @@
             // btnClose
             // 
             btnClose.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(212, 405);
+            btnClose.Location = new Point(242, 540);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(98, 38);
+            btnClose.Size = new Size(53, 51);
             btnClose.TabIndex = 19;
             btnClose.Text = "OK";
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(301, 540);
+            button1.Name = "button1";
+            button1.Size = new Size(56, 51);
+            button1.TabIndex = 27;
+            button1.Text = "Exit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(313, 450);
+            ClientSize = new Size(369, 600);
+            Controls.Add(button1);
             Controls.Add(btnEqual);
             Controls.Add(button6);
             Controls.Add(button23);
@@ -375,6 +414,8 @@
             Controls.Add(btnMinus);
             Controls.Add(btnPlus);
             Controls.Add(textBox1);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
             Text = "Calculator";
             Load += Form2_Load;
@@ -408,7 +449,8 @@
         private Button btnPercent;
         private Button btnMinus;
         private Button btnPlus;
-        private Button btnClose;
         private TextBox textBox1;
+        public Button btnClose;
+        private Button button1;
     }
 }
