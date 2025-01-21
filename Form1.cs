@@ -861,7 +861,6 @@
                         formula += $"برای تبدیل به فوت پوند، {baseUnit} ژول را بر 1.35582 تقسیم می‌کنیم: نتیجه = {result} فوت پوند.";
                         break;
 
-                    // سیستم‌های عددی
                     case "Binary (BIN)":
                         result = Convert.ToDouble(Convert.ToString((int)baseUnit, 2));
                         formula += $"نتیجه نهایی در سیستم باینری: {result}.";
