@@ -57,15 +57,20 @@
             calculaotrbtn = new Button();
             copybtn = new Button();
             convertbtn = new Button();
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            menuStrip3 = new MenuStrip();
+            languageToolStripMenuItem = new ToolStripMenuItem();
+            persianToolStripMenuItem = new ToolStripMenuItem();
+            englishToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             menuStrip2.SuspendLayout();
+            menuStrip3.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(179, 319);
+            textBox1.Location = new Point(182, 339);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.MaxLength = 28;
             textBox1.Name = "textBox1";
@@ -76,7 +81,7 @@
             // textBox
             // 
             textBox.BackColor = SystemColors.Window;
-            textBox.Location = new Point(437, 319);
+            textBox.Location = new Point(437, 339);
             textBox.Margin = new Padding(3, 4, 3, 4);
             textBox.MaxLength = 32000;
             textBox.Name = "textBox";
@@ -89,7 +94,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(179, 11);
+            label1.Location = new Point(224, 39);
             label1.Name = "label1";
             label1.Size = new Size(122, 21);
             label1.TabIndex = 1;
@@ -101,7 +106,7 @@
             inputlistbox.FormattingEnabled = true;
             inputlistbox.ItemHeight = 20;
             inputlistbox.Items.AddRange(new object[] { " " });
-            inputlistbox.Location = new Point(179, 36);
+            inputlistbox.Location = new Point(185, 65);
             inputlistbox.Margin = new Padding(3, 4, 3, 4);
             inputlistbox.Name = "inputlistbox";
             inputlistbox.Size = new Size(222, 264);
@@ -113,7 +118,7 @@
             putputlistbox.ImeMode = ImeMode.Alpha;
             putputlistbox.ItemHeight = 20;
             putputlistbox.Items.AddRange(new object[] { " " });
-            putputlistbox.Location = new Point(437, 36);
+            putputlistbox.Location = new Point(437, 65);
             putputlistbox.Margin = new Padding(3, 4, 3, 4);
             putputlistbox.Name = "putputlistbox";
             putputlistbox.Size = new Size(222, 264);
@@ -124,7 +129,7 @@
             formulatextBox.BackColor = SystemColors.Window;
             formulatextBox.Cursor = Cursors.IBeam;
             formulatextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            formulatextBox.Location = new Point(320, 427);
+            formulatextBox.Location = new Point(323, 451);
             formulatextBox.Margin = new Padding(3, 4, 3, 4);
             formulatextBox.Multiline = true;
             formulatextBox.Name = "formulatextBox";
@@ -137,7 +142,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Location = new Point(182, 0);
+            menuStrip1.Location = new Point(182, 28);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
             menuStrip1.Size = new Size(496, 24);
@@ -151,13 +156,14 @@
             menuStrip2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             menuStrip2.ImageScalingSize = new Size(20, 20);
             menuStrip2.Items.AddRange(new ToolStripItem[] { lengthmenu, areamenu, volumemenu, Weightandmassmenu, timemenu, temperaturemenu, energymenu, pressuremenu, speedmenu, datamenu, numeralsystemmenu });
-            menuStrip2.Location = new Point(0, 0);
+            menuStrip2.Location = new Point(0, 28);
             menuStrip2.Name = "menuStrip2";
             menuStrip2.Padding = new Padding(7, 3, 0, 3);
             menuStrip2.RightToLeft = RightToLeft.No;
-            menuStrip2.Size = new Size(182, 527);
+            menuStrip2.Size = new Size(182, 521);
             menuStrip2.TabIndex = 8;
             menuStrip2.Text = "menuStrip2";
+            menuStrip2.ItemClicked += menuStrip2_ItemClicked;
             // 
             // lengthmenu
             // 
@@ -273,7 +279,7 @@
             // x2btn
             // 
             x2btn.Cursor = Cursors.Hand;
-            x2btn.Location = new Point(178, 363);
+            x2btn.Location = new Point(185, 378);
             x2btn.Margin = new Padding(3, 4, 3, 4);
             x2btn.Name = "x2btn";
             x2btn.Size = new Size(64, 47);
@@ -285,7 +291,7 @@
             // x3btn
             // 
             x3btn.Cursor = Cursors.Hand;
-            x3btn.Location = new Point(249, 363);
+            x3btn.Location = new Point(253, 378);
             x3btn.Margin = new Padding(3, 4, 3, 4);
             x3btn.Name = "x3btn";
             x3btn.Size = new Size(64, 47);
@@ -297,7 +303,7 @@
             // x5btn
             // 
             x5btn.Cursor = Cursors.Hand;
-            x5btn.Location = new Point(249, 417);
+            x5btn.Location = new Point(253, 433);
             x5btn.Margin = new Padding(3, 4, 3, 4);
             x5btn.Name = "x5btn";
             x5btn.Size = new Size(64, 47);
@@ -309,7 +315,7 @@
             // x10btn
             // 
             x10btn.Cursor = Cursors.Hand;
-            x10btn.Location = new Point(178, 417);
+            x10btn.Location = new Point(185, 433);
             x10btn.Margin = new Padding(3, 4, 3, 4);
             x10btn.Name = "x10btn";
             x10btn.Size = new Size(64, 47);
@@ -321,7 +327,7 @@
             // x100btn
             // 
             x100btn.Cursor = Cursors.Hand;
-            x100btn.Location = new Point(178, 472);
+            x100btn.Location = new Point(185, 488);
             x100btn.Margin = new Padding(3, 4, 3, 4);
             x100btn.Name = "x100btn";
             x100btn.Size = new Size(64, 47);
@@ -333,7 +339,7 @@
             // x1000btn
             // 
             x1000btn.Cursor = Cursors.Hand;
-            x1000btn.Location = new Point(249, 472);
+            x1000btn.Location = new Point(253, 489);
             x1000btn.Margin = new Padding(3, 4, 3, 4);
             x1000btn.Name = "x1000btn";
             x1000btn.Size = new Size(64, 47);
@@ -349,7 +355,7 @@
             calculaotrbtn.Cursor = Cursors.Hand;
             calculaotrbtn.FlatStyle = FlatStyle.Flat;
             calculaotrbtn.ForeColor = SystemColors.Control;
-            calculaotrbtn.Location = new Point(330, 363);
+            calculaotrbtn.Location = new Point(340, 378);
             calculaotrbtn.Margin = new Padding(3, 4, 3, 4);
             calculaotrbtn.Name = "calculaotrbtn";
             calculaotrbtn.RightToLeft = RightToLeft.No;
@@ -365,7 +371,7 @@
             copybtn.Cursor = Cursors.Hand;
             copybtn.FlatStyle = FlatStyle.Flat;
             copybtn.ForeColor = SystemColors.Control;
-            copybtn.Location = new Point(410, 363);
+            copybtn.Location = new Point(416, 378);
             copybtn.Margin = new Padding(3, 4, 3, 4);
             copybtn.Name = "copybtn";
             copybtn.Size = new Size(57, 56);
@@ -376,7 +382,7 @@
             // convertbtn
             // 
             convertbtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            convertbtn.Location = new Point(489, 363);
+            convertbtn.Location = new Point(489, 374);
             convertbtn.Margin = new Padding(3, 4, 3, 4);
             convertbtn.Name = "convertbtn";
             convertbtn.Size = new Size(170, 56);
@@ -385,21 +391,11 @@
             convertbtn.UseVisualStyleBackColor = true;
             convertbtn.Click += convertbtn_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(469, 32);
-            label2.Name = "label2";
-            label2.Size = new Size(122, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Convert From";
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(437, 12);
+            label3.Location = new Point(496, 40);
             label3.Name = "label3";
             label3.Size = new Size(95, 21);
             label3.TabIndex = 1;
@@ -409,11 +405,49 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(403, 307);
+            label4.Location = new Point(403, 333);
             label4.Name = "label4";
             label4.Size = new Size(39, 41);
             label4.TabIndex = 11;
             label4.Text = "=";
+            // 
+            // menuStrip3
+            // 
+            menuStrip3.ImageScalingSize = new Size(20, 20);
+            menuStrip3.Items.AddRange(new ToolStripItem[] { languageToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip3.Location = new Point(0, 0);
+            menuStrip3.Name = "menuStrip3";
+            menuStrip3.Size = new Size(678, 28);
+            menuStrip3.TabIndex = 12;
+            menuStrip3.Text = "menuStrip3";
+            // 
+            // languageToolStripMenuItem
+            // 
+            languageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { persianToolStripMenuItem, englishToolStripMenuItem });
+            languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            languageToolStripMenuItem.Size = new Size(88, 24);
+            languageToolStripMenuItem.Text = "Language";
+            // 
+            // persianToolStripMenuItem
+            // 
+            persianToolStripMenuItem.Name = "persianToolStripMenuItem";
+            persianToolStripMenuItem.Size = new Size(139, 26);
+            persianToolStripMenuItem.Text = "Persian";
+            persianToolStripMenuItem.Click += persianToolStripMenuItem_Click;
+            // 
+            // englishToolStripMenuItem
+            // 
+            englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            englishToolStripMenuItem.Size = new Size(139, 26);
+            englishToolStripMenuItem.Text = "English";
+            englishToolStripMenuItem.Click += englishToolStripMenuItem_Click;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(64, 24);
+            aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -421,7 +455,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(678, 527);
+            ClientSize = new Size(678, 549);
             Controls.Add(textBox1);
             Controls.Add(convertbtn);
             Controls.Add(copybtn);
@@ -435,12 +469,12 @@
             Controls.Add(formulatextBox);
             Controls.Add(putputlistbox);
             Controls.Add(inputlistbox);
-            Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(textBox);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);
+            Controls.Add(menuStrip3);
             Controls.Add(label4);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
@@ -449,6 +483,8 @@
             Load += Form1_Load;
             menuStrip2.ResumeLayout(false);
             menuStrip2.PerformLayout();
+            menuStrip3.ResumeLayout(false);
+            menuStrip3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -480,10 +516,14 @@
         private Button calculaotrbtn;
         private Button copybtn;
         private Button convertbtn;
-        private Label label2;
         private Label label3;
         private Label label4;
         private TextBox formulatextBox;
         public TextBox textBox1;
+        private MenuStrip menuStrip3;
+        private ToolStripMenuItem languageToolStripMenuItem;
+        private ToolStripMenuItem persianToolStripMenuItem;
+        private ToolStripMenuItem englishToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
